@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CarPartsNigeria Navbar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-border"></div>
+
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="Autosense Logo.png" alt="Logo" />
+      <div class="logo-text">myautosense.com</div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="auth-links">
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+      </div>
+
+      <div class="socials-and-flags">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-youtube"></i>
+        <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag">
+        <img src="https://flagcdn.com/w40/gh.png" alt="Ghana" class="flag">
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔻 Main Navigation Bar -->
+  <nav class="main-nav">
+    <div class="nav-item">
+      <a href="#" class="active">Home</a>
+      <div class="dropdown">
+        <a href="#">Sub Home 1</a>
+        <a href="#">Sub Home 2</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#">Buyer Locations</a>
+      <div class="dropdown">
+        <a href="#">Lagos</a>
+        <a href="#">Abuja</a>
+        <a href="#">Port Harcourt</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#">Buy Parts</a>
+      <div class="dropdown">
+        <a href="#">Engine</a>
+        <a href="#">Body</a>
+        <a href="#">Electrical</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#">Vendor Links</a>
+      <div class="dropdown">
+        <a href="#">Join as Vendor</a>
+        <a href="#">Vendor Login</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#">Auction Services</a>
+      <div class="dropdown">
+        <a href="#">How It Works</a>
+        <a href="#">Get Started</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#">Car Sale Links</a>
+      <div class="dropdown">
+        <a href="#">New Cars</a>
+        <a href="#">Used Cars</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#">About Us</a>
+      <div class="dropdown">
+        <a href="#">Our Story</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="automedics-carousel">
+    <div id="autoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="d-flex align-items-center justify-content-between px-5" style="min-height: 250px; background: #f9f9f9;">
+            <!-- Left Content -->
+            <div>
+              <h5>Auto Repair & Service Specialist</h5>
+              <p>Auto Training & Certification.</p>
+              <p>
+                Visit: <a href="http://myautosense.com" target="_blank">http://myautosense.com</a><br>
+                Mail: info@autosense.com<br>
+                Call: +2349071276038
+              </p>
+              <button class="btn btn-dark">REGISTER</button>
+            </div>
+            <!-- Center Image -->
+            <img src="Autosense Logo.png" class="img-fluid" alt="AutoMedics Ad" style="max-height: 200px;" />
+            <!-- Right Call to Action -->
+            <div class="text-end">
+              <h4>AutoMedics Repairs<br>& Training Shop</h4>
+              <button class="btn btn-danger mt-2">Visit Now</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- You can duplicate carousel-item div for more slides -->
+      </div>
+      <!-- Controls (optional) -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#autoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#autoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="part-search-section">
+    <!-- Title Bar -->
+    <div class="title-bar">
+      <h2>SEARCH YOUR DESIRED PART</h2>
+    </div>
+  
+    <!-- Toggle Buttons -->
+    <div class="toggle-buttons">
+      <button class="toggle active">Specific Search</button>
+      <button class="toggle">VIN Lookup</button>
+    </div>
+  
+    <!-- Search Form Layout -->
+    <div class="search-container">
+      <!-- Left Image -->
+      <div class="side-banner">
+        <img src="Autosense Logo.png" alt="AutoMedics Left Ad">
+      </div>
+  
+      <!-- Form Fields -->
+      <form class="search-form">
+        <div class="form-group">
+          <label>Vehicle Type</label>
+          <select><option>Select Vehicle type</option></select>
+        </div>
+        <div class="form-group">
+          <label>Year</label>
+          <select><option>Select Year</option></select>
+        </div>
+        <div class="form-group">
+          <label>Make/Model</label>
+          <select><option>Select Make/Model</option></select>
+        </div>
+        <div class="form-group">
+          <label>Part</label>
+          <select><option>Select Part</option></select>
+        </div>
+        <div class="form-group">
+          <label>Region/State</label>
+          <select><option>All Regions/States</option></select>
+        </div>
+        <div class="form-group">
+          <label>District/City</label>
+          <select><option>All District/City</option></select>
+        </div>
+        <button type="submit" class="search-btn"><i class="fas fa-search"></i> Search</button>
+      </form>
+  
+      <!-- Right Image -->
+      <div class="side-banner">
+        <img src="Autosense Logo.png" alt="Partner Logos">
+      </div>
+    </div>
+  
+    <!-- Bottom Promo -->
+    <div class="bottom-promo">
+      <img src="Autosense Logo.png" alt="Bottom Banner">
+    </div>
+  </section>
+
+
+
+
+
+  <footer>
+    <div class="footer-container">
+      <!-- How We Work -->
+      <div class="footer-column">
+        <h4>How We Work</h4>
+        <ul>
+          <li><a href="#">Get Registered</a></li>
+          <li><a href="#">How We Sell</a></li>
+          <li><a href="#">Seller Fees</a></li>
+          <li><a href="#">Refer a Seller</a></li>
+          <li><a href="#">Bidding FAQ</a></li>
+          <li><a href="#">Payment FAQ</a></li>
+          <li><a href="#">Download Mobile App</a></li>
+        </ul>
+      </div>
+
+      <!-- About Us -->
+      <div class="footer-column">
+        <h4>About us</h4>
+        <ul>
+          <li><a href="#">Are We Like eBay?</a></li>
+          <li><a href="#">Our Vendors</a></li>
+          <li><a href="#">Become a Partner</a></li>
+          <li><a href="#">Affiliate Resellers Program</a></li>
+          <li><a href="#">What Services we Sell</a></li>
+          <li><a href="#">The Team</a></li>
+        </ul>
+      </div>
+
+      <!-- Engage Us -->
+      <div class="footer-column">
+        <h4>Engage Us</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Youtube</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Google+</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="#">Contact Information</a></li>
+        </ul>
+        <div class="client-review">
+          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712033.png" alt="Mascot" />
+          <span><strong>Client Says About Us</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      © All rights are reserved. 
+      <a href="#">Terms & Conditions</a> / 
+      <a href="#">Privacy Policy</a> / 
+      Powered by <a href="#">Deedoc</a> 
+      <span class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fas fa-camera"></i></a>
+      </span>
+    </div>
+  </footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
