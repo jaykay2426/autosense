@@ -606,4 +606,6 @@ footer {
     overflow: hidden;
     margin-right: -40px;
   }
+  .search-btn {
+    font-size: 25x;
 }
