@@ -83,8 +83,21 @@ body {
 }
 
 
+.navbar #menu-icon{
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(6, 38, 126);
+  cursor: pointer;
+  display: none;
+}
 
+.navbar #menu-icon:hover{
+  color: black;
+}
 
+.nav-container{
+
+}
 
 .main-nav {
   display: flex;
@@ -123,6 +136,7 @@ body {
 .main-nav a.active::after {
   width: 100%;
 }
+
 
 /* 🔻 Dropdown menu styles */
 .dropdown {
@@ -404,3 +418,92 @@ footer {
 
 
 
+@media (max-width: 1024px) {
+
+  .navbar #menu-icon{
+    display: block;
+  }
+
+  .logo img {
+    height: 180px;
+    margin-left: 50px;
+  }
+
+  .logo-text {
+    font-size: 25px;
+    margin-bottom: -200px;
+    font-weight: bold;
+    margin-left: -290px;
+    color: #333;
+  }
+
+  #menu-icon {
+  position: fixed;  
+  font-weight: bolder;   
+  top: 20px;
+  right: 30px;     
+  cursor: pointer;
+  z-index: 100;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    margin-top: 20px;
+    padding: 1rem 3rem;
+    background-color: white; 
+    border-left: 2px solid yellow;
+    border-bottom: 2px solid yellow;
+    border-bottom-left-radius: 2rem;
+    display: none;
+    z-index: 99; /* ensures it appears above other content */
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .main-nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: red;
+    text-decoration: none;
+  }
+  .right-section {
+    flex-direction: row;       /* keep them side by side */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .auth-links,
+  .socials-and-flags {
+    flex: 1;                   /* each takes equal space */
+    max-width: 50%;
+    clip-path: none;           /* optional: remove angled background */
+    padding: 12px 10px;
+    justify-content: center;
+  }
+
+  .auth-links a {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .socials-and-flags i {
+    font-size: 18px;
+  }
+
+  .flag {
+    width: 26px;
+    height: 28px;
+  }
+  
+}
