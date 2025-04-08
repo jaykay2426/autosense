@@ -522,4 +522,62 @@ footer {
   .form-group label{
     font-size: 27px;
   }
+  .automedics-carousel .carousel-inner {
+    padding: 20px 10px;
+  }
+
+  .automedics-carousel .carousel-item {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+
+  .automedics-carousel .carousel-item .d-flex {
+    flex-direction: column !important; /* Override bootstrap flex row */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px !important;
+  }
+
+  .automedics-carousel h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .automedics-carousel p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .automedics-carousel a {
+    font-size: 16px;
+    word-break: break-word;
+  }
+
+  .automedics-carousel img {
+    max-height: 180px;
+    margin: 15px 0;
+    width: 90%;
+    object-fit: contain;
+  }
+
+  .automedics-carousel h4 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .automedics-carousel button.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 40px 40px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
 }
