@@ -18,3 +18,26 @@ menuIcon.onclick = () => {
         isNavbarVisible = true;
     }
 };
+
+
+
+
+
+
+
+  const leftSlides = document.querySelectorAll(".left-slideshow .slide");
+  let currentLeft = 0;
+
+  function showLeftSlide(index) {
+    leftSlides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextLeftSlide() {
+    currentLeft = (currentLeft + 1) % leftSlides.length;
+    showLeftSlide(currentLeft);
+  }
+
+  showLeftSlide(currentLeft);
+  setInterval(nextLeftSlide, 3000); // Change every 3 seconds
