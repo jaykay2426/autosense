@@ -1,336 +1,353 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>CarPartsNigeria Navbar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="top-border"></div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      <!---------------------------------------------------------------------- nav Bar -------------------------------------------------------------------->
-  <div class="navbar">
-    <div class="logo">
-      <a href="index.html"><img src="Autosense Logo.png" alt="Logo" /></a>
-      <div class="logo-text">myautosense.com</div>
-    </div>
-    
-    <i class="fas fa-bars" id="menu-icon"></i>
-    
+body {
+  font-family: Arial, sans-serif;
+}
 
-    <!-- Right Section -->
-    <div class="right-section-wrapper">
-    <div class="right-section">
-      <div class="auth-links">
-        <a href="#">Login</a>
-        <a href="#">Register</a>
-      </div>
+.top-border {
+  height: 3px;
+  margin-top: 3px;
+  background-color: rgb(6, 38, 126);
+}
 
-      <div class="socials-and-flags">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-linkedin-in"></i>
-        <i class="fab fa-youtube"></i>
-        <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" class="flag">
-        <img src="https://flagcdn.com/w40/gh.png" alt="Ghana" class="flag">
-      </div>
-    </div>
-    </div>
-  </div>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid ;
+  padding: 10px 30px;
+  margin-right: 500px;
+  background-color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 70px;
+  margin-left: 500px;
+}
+
+.logo-text {
+  font-size: 10px;
+  margin-top: 80px;
+  margin-left: -113px;
+  font-weight: bold;
+  color: #333;
+}
+
+.right-section {
+  display: flex;
+  margin-top: -60px;
+  margin-right: 500px;
+  cursor: pointer;
+}
+
+.auth-links {
+  background-color: rgb(6, 38, 126);
+  color: white;
+  padding: 8px 15px;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+  margin-right: 5px;
+  display: flex;
+  gap: 15px;
+}
+
+.auth-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.socials-and-flags {
+  background-color: rgb(6, 38, 126);
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  clip-path: polygon(10% 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.socials-and-flags i {
+  color: white;
+  font-size: 14px;
+}
+
+.flag {
+  width: 24px;
+  height: 16px;
+}
+
+
+.navbar #menu-icon{
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(6, 38, 126);
+  cursor: pointer;
+  display: none;
+}
+
+.navbar #menu-icon:hover{
+  color: black;
+}
+
+.nav-container{
+
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.main-nav a {
+  position: relative;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  width: 0;
+  height: 4px;
+  background-color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+  transform: skewX(-30deg);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+
+/* 🔻 Dropdown menu styles */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 180px;
+  flex-direction: column;
+}
+
+.dropdown a {
+  padding: 12px 15px;
+  font-size: 14px;
+  white-space: nowrap;
+  color: rgb(6, 38, 126);
+  font-weight: bold;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown a:hover {
+  background-color: #f5f5f5;
+}
+
+/* 🔥 Show dropdown on hover */
+.nav-item:hover .dropdown {
+  display: flex;
+}
+
+
+.carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: none;
+    background-color: black;
+    width: 3rem;
+    height: 3rem;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.354a.5.5 0 0 0-.708 0L4.5 7.5l6.146 6.146a.5.5 0 0 0 .708-.708L5.707 7.5l5.647-5.646a.5.5 0 0 0 0-.708z'/%3E%3C/svg%3E") no-repeat center;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+  }
+
+  .carousel-control-next-icon {
+    transform: rotate(180deg);
+  }
 
 
 
 
 
 
+.part-search-section {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
 
+.title-bar {
+  background-color: #2c2f36;
+  color: white;
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+  padding: 10px 30px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
 
-
+.form-group label{
   
-    <!---------------------------------------------------------------------- main nav-bar-------------------------------------------------------------------->
+}
+
+.toggle-buttons {
+  margin: 10px 0;
+}
+
+.toggle {
+  padding: 8px 15px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background-color: rgb(6, 38, 126);
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.left-slideshow {
+  position: relative;
+  margin-left: -50px;
+  width: 190px; /* or adjust */
+  height: 100px; /* or adjust */
+  overflow: hidden;
+}
+
+.left-slideshow .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.left-slideshow .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
 
 
-  <div class="nav-container">
-  <nav class="main-nav" id="navbar">
-    <div class="nav-item">
-      <a href="#" class="active">Home</a>
-      <div class="dropdown">
-        <a href="#">Sub Home 1</a>
-        <a href="#">Sub Home 2</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#">Buyer Locations</a>
-      <div class="dropdown">
-        <a href="#">Lagos</a>
-        <a href="#">Abuja</a>
-        <a href="#">Port Harcourt</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#">Buy Parts</a>
-      <div class="dropdown">
-        <a href="#">Engine</a>
-        <a href="#">Body</a>
-        <a href="#">Electrical</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#">Vendor Links</a>
-      <div class="dropdown">
-        <a href="#">Join as Vendor</a>
-        <a href="#">Vendor Login</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#">Auction Services</a>
-      <div class="dropdown">
-        <a href="#">How It Works</a>
-        <a href="#">Get Started</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#">Car Sale Links</a>
-      <div class="dropdown">
-        <a href="#">New Cars</a>
-        <a href="#">Used Cars</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#">About Us</a>
-      <div class="dropdown">
-        <a href="#">Our Story</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
-  </nav>
-  </div>
+.search-form {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
 
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
 
+.form-group select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
 
+.search-btn {
+  background-color: rgb(6, 38, 126);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: center;
+}
 
+.search-btn i {
+  margin-right: 5px;
+}
 
+.bottom-promo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
 
+.bottom-promo img {
+  max-width: 300px;
+  height: auto;
+}
 
-<!---------------------------------------------------------------------- carousel -------------------------------------------------------------------->
-<section class="vin-carousel" style="height: 300px; overflow: hidden;">
-  <div id="vinCarousel" class="carousel slide h-100" data-bs-ride="carousel">
-    
-    <!-- Carousel Indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#vinCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#vinCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#vinCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#vinCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    </div>
+.vertical-carousel {
+  width: 150px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
 
-    <div class="carousel-inner h-100">
-      
-      <!-- Slide 1 -->
-      <div class="carousel-item active h-100">
-        <div class="d-flex justify-content-between align-items-center h-100 px-4 py-3" style="background: #fff; position: relative;">
-          <!-- Left Content -->
-          <div class="text-start">
-            <img src="Autosense Logo.png" alt="Logo" style="width: 100px;" />
-            <h4 style="font-weight: bold;">Easy and fast <span style="color: rgb(6, 38, 126);">VIN</span> check</h4>
-            <p>Check car history before buying - Find your car by VIN</p>
-            <button class="btn btn-danger mb-2" style="background-color: rgb(6, 38, 126); border: none;">Get VIN Check</button><br>
-            <div style="background: #4a4d55; color: white; padding: 10px 25px; display: inline-block; font-size: 1.2rem;">CHECK YOUR HISTORY</div>
-          </div>
-          <!-- Center Image -->
-          <div style="position: relative; height: 100%; width: 550px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <div style="background: rgb(255, 255, 255); width: 200px; height: 200px; clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 50%, 50% 0); position: absolute; top: 0; right: 0; z-index: 0;"></div>
-            <img src="images.jpeg" alt="Car" style="height: 100%; width: auto; position: relative; z-index: 2; object-fit: contain;" />
-          </div>
-          <!-- Right Content -->
-          <div class="text-end" style="max-width: 300px;">
-            <h4 style="font-size: 1.5rem;">Get a VINCHECK<br>FOR YOUR FOREIGN<br>OR LOCAL VEHICLE<br>BEFORE YOU BUY</h4>
-            <button class="btn btn-danger mt-2" style="background-color: rgb(6, 38, 126); border: none;">Check It Now</button>
-          </div>
-        </div>
-      </div>
+.carousel-track {
+  display: flex;
+  flex-direction: column;
+  animation: verticalInfinite 42s linear infinite;
+}
 
-      <!-- Slide 2 -->
-      <div class="carousel-item h-100">
-        <div class="d-flex justify-content-between align-items-center h-100 px-4 py-3" style="background: #fff; position: relative;">
-          <!-- Left Content -->
-          <div class="text-start">
-            <img src="Autosense Logo.png" alt="Logo" style="width: 100px;" />
-            <h4 style="font-weight: bold;">Easy and fast <span style="color: rgb(6, 38, 126);">VIN</span> check</h4>
-            <p>Check car history before buying - Find your car by VIN</p>
-            <button class="btn btn-danger mb-2" style="background-color: rgb(6, 38, 126); border: none;">Get VIN Check</button><br>
-            <div style="background: #4a4d55; color: white; padding: 10px 25px; display: inline-block; font-size: 1.2rem;">CHECK YOUR HISTORY</div>
-          </div>
-          <!-- Center Image -->
-          <div style="position: relative; height: 100%; width: 550px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <div style="background: rgb(255, 255, 255); width: 200px; height: 200px; clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 50%, 50% 0); position: absolute; top: 0; right: 0; z-index: 0;"></div>
-            <img src="img.jpeg" alt="Car" style="height: 100%; width: auto; position: relative; z-index: 2; object-fit: contain;" />
-          </div>
-          <!-- Right Content -->
-          <div class="text-end" style="max-width: 300px;">
-            <h4 style="font-size: 1.5rem;">Get a VINCHECK<br>FOR YOUR FOREIGN<br>OR LOCAL VEHICLE<br>BEFORE YOU BUY</h4>
-            <button class="btn btn-danger mt-2" style="background-color: rgb(6, 38, 126); border: none;">Check It Now</button>
-          </div>
-        </div>
-      </div>
+.carousel-track img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
 
-      <!-- Slide 3 -->
-      <div class="carousel-item h-100">
-        <div class="d-flex justify-content-between align-items-center h-100 px-4 py-3" style="background: #fff; position: relative;">
-          <!-- Left Content -->
-          <div class="text-start">
-            <img src="Autosense Logo.png" alt="Logo" style="width: 100px;" />
-            <h4 style="font-weight: bold;">Easy and fast <span style="color: rgb(6, 38, 126);">VIN</span> check</h4>
-            <p>Check car history before buying - Find your car by VIN</p>
-            <button class="btn btn-danger mb-2" style="background-color: rgb(6, 38, 126); border: none;">Get VIN Check</button><br>
-            <div style="background: #4a4d55; color: white; padding: 10px 25px; display: inline-block; font-size: 1.2rem;">CHECK YOUR HISTORY</div>
-          </div>
-          <!-- Center Image -->
-          <div style="position: relative; height: 100%; width: 550px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <div style="background: rgb(255, 255, 255); width: 200px; height: 200px; clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 50%, 50% 0); position: absolute; top: 0; right: 0; z-index: 0;"></div>
-            <img src="img1.jpeg" alt="Car" style="height: 100%; width: auto; position: relative; z-index: 2; object-fit: contain;" />
-          </div>
-          <!-- Right Content -->
-          <div class="text-end" style="max-width: 300px;">
-            <h4 style="font-size: 1.5rem;">Get a VINCHECK<br>FOR YOUR FOREIGN<br>OR LOCAL VEHICLE<br>BEFORE YOU BUY</h4>
-            <button class="btn btn-danger mt-2" style="background-color: rgb(6, 38, 126); border: none;">Check It Now</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="carousel-item h-100">
-        <div class="d-flex justify-content-between align-items-center h-100 px-4 py-3" style="background: #fff; position: relative;">
-          <!-- Left Content -->
-          <div class="text-start">
-            <img src="Autosense Logo.png" alt="Logo" style="width: 100px;" />
-            <h4 style="font-weight: bold;">Easy and fast <span style="color: rgb(6, 38, 126);">VIN</span> check</h4>
-            <p>Check car history before buying - Find your car by VIN</p>
-            <button class="btn btn-danger mb-2" style="background-color: rgb(6, 38, 126); border: none;">Get VIN Check</button><br>
-            <div style="background: #4a4d55; color: white; padding: 10px 25px; display: inline-block; font-size: 1.2rem;">CHECK YOUR HISTORY</div>
-          </div>
-          <!-- Center Image -->
-          <div style="position: relative; height: 100%; width: 550px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <div style="background: rgb(255, 255, 255); width: 200px; height: 200px; clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 50%, 50% 0); position: absolute; top: 0; right: 0; z-index: 0;"></div>
-            <img src="Autosense Logo.png" alt="Car" style="height: 100%; width: auto; position: relative; z-index: 2; object-fit: contain;" />
-          </div>
-          <!-- Right Content -->
-          <div class="text-end" style="max-width: 300px;">
-            <h4 style="font-size: 1.5rem;">Get a VINCHECK<br>FOR YOUR FOREIGN<br>OR LOCAL VEHICLE<br>BEFORE YOU BUY</h4>
-            <button class="btn btn-danger mt-2" style="background-color: rgb(6, 38, 126); border: none;">Check It Now</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#vinCarousel" data-bs-slide="prev" style="color: black; font-weight: bold;">
-      <span class="carousel-control-prev-icon d-none" aria-hidden="true"></span>
-      <span style="font-size: 3rem;">‹ </span>
-    </button>
-    
-    <!-- Next Button -->
-    <button class="carousel-control-next" type="button" data-bs-target="#vinCarousel" data-bs-slide="next" style="color: black; font-weight: bold;">
-      <span class="carousel-control-next-icon d-none" aria-hidden="true"></span>
-      <span style="font-size: 3rem;"> ›</span>
-    </button>
-
-  </div>
-</section>
-
-  
-
-
-
-
-
-
-  <section class="part-search-section">
-    <!---------------------------------------------------------------------- Title Bar -------------------------------------------------------------------->
-    <div class="title-bar">
-      <h2>SEARCH YOUR DESIRED PART</h2>
-    </div>
-  
-    <!-- Toggle Buttons -->
-    <div class="toggle-buttons">
-      <button class="toggle active">Specific Search</button>
-      <button class="toggle">VIN Lookup</button>
-    </div>
-  
-    <!-- Search Form Layout -->
-    <div class="search-container">
-      <!-- Left Image -->
-      <div class="side-banner left-slideshow">
-        <img class="slide" src="img.jpeg" alt="Slide 1" />
-        <img class="slide" src="images.jpeg" alt="Slide 2" />
-        <img class="slide" src="img1.jpeg" alt="Slide 3" />
-        <img class="slide" src="Autosense Logo.png" alt="Slide 4" />
-        <img class="slide" src="images.jpeg" alt="Slide 5" />
-      </div>
-  
-      <!-- Form Fields -->
-      <form class="search-form">
-        <div class="form-group">
-          <label>Vehicle Type</label>
-          <select><option>Select Vehicle type</option></select>
-        </div>
-        <div class="form-group">
-          <label>Year</label>
-          <select><option>Select Year</option></select>
-        </div>
-        <div class="form-group">
-          <label>Make/Model</label>
-          <select><option>Select Make/Model</option></select>
-        </div>
-        <div class="form-group">
-          <label>Part</label>
-          <select><option>Select Part</option></select>
-        </div>
-        <div class="form-group">
-          <label>Region/State</label>
-          <select><option>All Regions/States</option></select>
-        </div>
-        <div class="form-group">
-          <label>District/City</label>
-          <select><option>All District/City</option></select>
-        </div>
-        <button type="submit" class="search-btn"><i class="fas fa-search"></i> Search</button>
-      </form>
-  
-      <!-- Right Image -->
-      <div class="side-banner vertical-carousel">
-        <div class="carousel-track">
-          <img src="img.jpeg" alt="Slide 1" />
-          <img src="img1.jpeg" alt="Slide 2" />
-          <img src="images.jpeg" alt="Slide 3" />
-          <img src="Autosense Logo.png" alt="Slide 4" />
-          <img src="img.jpeg" alt="Slide 5" />
-          <img src="Autosense Logo.png" alt="Slide 6" />
-          <img src="images.jpeg" alt="Slide 7" />
-      
-          <!-- Duplicate for seamless loop -->
-          <img src="img.jpeg" alt="Slide 1" />
-          <img src="img1.jpeg" alt="Slide 2" />
-          <img src="images.jpeg" alt="Slide 3" />
-          <img src="Autosense Logo.png" alt="Slide 4" />
-          <img src="img.jpeg" alt="Slide 5" />
-          <img src="Autosense Logo.png" alt="Slide 6" />
-          <img src="images.jpeg" alt="Slide 7" />
-        </div>
-      </div>
-  
-    <!-- Bottom Promo -->
-    <div class="bottom-promo">
-      <img src="Autosense Logo.png" alt="Bottom Banner">
-    </div>
-  </section>
-  
+/* Infinite scrolling keyframes */
+@keyframes verticalInfinite {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-840px); /* 120px * 7 images */
+  }
+}
 
 
 
@@ -340,79 +357,6 @@
 
 
 
-    <!---------------------------------------------------------------------- footer -------------------------------------------------------------------->
-  <footer>
-    <div class="footer-container">
-      <!-- How We Work -->
-      <div class="footer-column">
-        <h4>How We Work</h4>
-        <ul>
-          <li><a href="#">Get Registered</a></li>
-          <li><a href="#">How We Sell</a></li>
-          <li><a href="#">Seller Fees</a></li>
-          <li><a href="#">Refer a Seller</a></li>
-          <li><a href="#">Bidding FAQ</a></li>
-          <li><a href="#">Payment FAQ</a></li>
-          <li><a href="#">Download Mobile App</a></li>
-        </ul>
-      </div>
-
-      <!-- About Us -->
-      <div class="footer-column">
-        <h4>About us</h4>
-        <ul>
-          <li><a href="#">Are We Like eBay?</a></li>
-          <li><a href="#">Our Vendors</a></li>
-          <li><a href="#">Become a Partner</a></li>
-          <li><a href="#">Affiliate Resellers Program</a></li>
-          <li><a href="#">What Services we Sell</a></li>
-          <li><a href="#">The Team</a></li>
-        </ul>
-      </div>
-
-      <!-- Engage Us -->
-      <div class="footer-column">
-        <h4>Engage Us</h4>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Youtube</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Google+</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Us -->
-      <div class="footer-column">
-        <h4>Contact Us</h4>
-        <ul>
-          <li><a href="#">Contact Information</a></li>
-        </ul>
-        <div class="client-review">
-          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712033.png" alt="Mascot" />
-          <span><strong>Client Says About Us</strong></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
-      © All rights are reserved. 
-      <a href="#">Terms & Conditions</a> / 
-      <a href="#">Privacy Policy</a> / 
-      Powered by <a href="#">Deedoc</a> 
-      <span class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fas fa-camera"></i></a>
-      </span>
-    </div>
-  </footer>
-  
 
 
 
@@ -421,7 +365,257 @@
 
 
 
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #2e323c;
+  color: #d1d5db;
+  padding: 50px 40px 30px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  width: 22%;
+  margin-bottom: 30px;
+}
+
+.footer-column h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.client-review {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.client-review img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.footer-bottom a {
+  color: #aaa;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  margin-left: 10px;
+  color: #d1d5db;
+}
+
+.social-icons a:hover {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+
+  .navbar #menu-icon{
+    display: block;
+    font-size: 70px;  /* <-- Make it bigger */
+  }
+
+  .logo img {
+    height: 270px;
+    margin-left: 200px;
+  }
+
+  .logo-text {
+    font-size: 32px;
+    margin-bottom: -220px;
+    font-weight: bold;
+    margin-left: -405px;
+    color: #333;
+  }
+
+  #menu-icon {
+    position: fixed;  
+    font-weight: bolder;   
+    top: 20px;
+    right: 30px;     
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    margin-top: 20px;
+    padding: 1rem 3rem;
+    background-color: white; 
+    border-left: 2px solid yellow;
+    border-bottom: 2px solid yellow;
+    border-bottom-left-radius: 2rem;
+    display: none;
+    z-index: 99; /* ensures it appears above other content */
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .main-nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: red;
+    text-decoration: none;
+  }
+  .right-section {
+    flex-direction: row;       /* keep them side by side */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    padding: 10px 10px;
+    gap: 10px;
+  }
+
+  .auth-links,
+  .socials-and-flags {
+    flex: 1;                   /* each takes equal space */
+    max-width: 50%;
+    clip-path: none;           /* optional: remove angled background */
+    padding: 12px 10px;
+    justify-content: center;
+  }
+
+  .socials-and-flags{
+    justify-content: space-between;
+  }
+
+  .auth-links{
+    justify-content: space-around;
+  }
+
+  .auth-links a {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .socials-and-flags i {
+    font-size: 18px;
+  }
+
+  .flag {
+    width: 26px;
+    height: 28px;
+  }
+  .title-bar h2 {
+    font-size: 40px;
+  }
+  .toggle{
+    font-size: 30px;
+  }
+  .search-container{
+    font-size: 30px;
+  }
+  .side-banner img{
+     height: 100px;
+     max-width: 150px;
+  }
+  .form-group label{
+    font-size: 27px;
+  }
+  .left-slideshow {
+    position: relative;
+    margin-left: -50px;
+    width: 200px; /* or adjust */
+    height: 100px; /* or adjust */
+    overflow: hidden;
+    margin-right: -40px;
+  }
+}
