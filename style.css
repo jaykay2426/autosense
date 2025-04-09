@@ -618,4 +618,8 @@ footer {
     overflow: hidden;
     margin-right: -40px;
   }
+  .search-btn{
+    font-size: 20px;
+    padding: 20px 40px;
+  }
 }
