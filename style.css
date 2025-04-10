@@ -498,6 +498,286 @@ footer {
 
 
 
+/* Left Section Styles */
+.left {
+    flex: 1;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    animation: slide-in-left 1s ease-out;
+}
+
+.left .log-left {
+    position: relative;
+    width: 200px;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 15px 50px;
+    background: transparent;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(
+        90deg, 
+        transparent, 
+        white,
+        green,
+        red,
+        gold,
+        blue,
+        green,
+        black,
+        transparent
+        )
+        30;
+    box-shadow: inset 0 0 10px green;
+    backdrop-filter: blur(20px);
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.left .log-left:hover{
+    box-shadow: inset 0 0 50px green;
+}
+
+/* Right Section Styles */
+.login-right {
+    flex: 1;
+    background: url('/mclaren-2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade-in 1s ease-out;
+}
+
+.right {
+    flex: 1;
+    background: url('/mclaren-1.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade-in 1s ease-out;
+}
+
+/* Login Form Styles */
+.login-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: pop-in 0.5s ease-out;
+}
+
+.login-form a {
+    width: 270px;
+    color: red;
+}
+
+.login-form img {
+    width: 250px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.phone-input-wrapper {
+    display: flex;
+    align-items: center;
+}
+.country-code {
+    padding: 10px;
+    border-right: none;
+}
+.phone-number {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-form button[type="button"] {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.login-form button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.login-form button[type="button"]:hover {
+    background-color: #f1f1f1;
+}
+
+.login-form h5 {
+    transition: color 0.3s ease;
+}
+
+.login-form h5:hover {
+    color: #ff0000;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+    from { transform: translateX(-150%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes pop-in {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+
+.left a{
+    color: white;
+    z-index: 100;    
+}
+
+.left a .button{
+    color: red;
+    font-size: 28px;
+    margin-top: 150px;
+    margin-left: -200px;
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left Section Styles */
+.left {
+    flex: 1;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+.left video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.left h1{
+    z-index: 100;
+}
+.left a{
+    position: relative;
+    width: 200px;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 15px 50px;
+    margin
+    background: transparent;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(
+        90deg, 
+        transparent, 
+        white,
+        red,
+        gold,
+        green,
+        blue,
+        black,
+        transparent
+        )
+        30;
+    box-shadow: inset 0 0 10px red;
+    backdrop-filter: blur(20px);
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.left a:hover{
+    box-shadow: inset 0 0 50px red;
+}
+
+
+/* Right Section Styles */
+.signup-right {
+    flex: 1;
+    background: url('/mclaren-4.jpeg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1024px) {
 
   .navbar #menu-icon{
