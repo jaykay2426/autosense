@@ -89,7 +89,6 @@ body {
 .navbar #menu-icon{
   font-weight: bold;
   font-size: 20px;
-  margin-left:-29px 
   color: rgb(6, 38, 126);
   cursor: pointer;
   display: none;
