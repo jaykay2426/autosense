@@ -67,66 +67,65 @@
   </div>
 
   <div class="main-content">
-
-  <nav>
-    <div class="logo">
-      <a href="landing.html"><img src="Autosense Logo 3.png" alt="Autosense Logo"></a>
-    </div>
-
-    <i class="fas fa-bars" id="menu-icon"></i>
-    
-
-    <ul class="nav-links" id="navbar">
-
-      <li><a href="index.html">Home</a></li>
-
-      <li>
-        <a href="#">Buyers</a>
-        <ul class="dropdown">
-          <li><a href="#">Find a Car</a></li>
-          <li><a href="#">Rental Services</a></li>
-          <li><a href="#">Buy New</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Locations</a>
-        <ul class="dropdown">
-          <li><a href="#">Lagos</a></li>
-          <li><a href="#">Abuja</a></li>
-          <li><a href="#">Port Harcourt</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Parts</a>
-        <ul class="dropdown">
-          <li><a href="#">Buy Parts</a></li>
-          <li><a href="#">Accessories</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Vendors</a>
-        <ul class="dropdown">
-          <li><a href="#">Become a Vendor</a></li>
-          <li><a href="#">Vendor Login</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Car Sales</a>
-        <ul class="dropdown">
-          <li><a href="#">New Listings</a></li>
-          <li><a href="#">Certified Used</a></li>
-        </ul>
-      </li>
-
-      <li><a href="aboutus.html">About Us</a></li>
-      <li><a href="login.html ">Sign Up</a></li>
-      <li><a href="register.html">Sign In</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <div class="logo">
+        <a href="landing.html"><img src="Autosense Logo 3.png" alt="Autosense Logo"></a>
+      </div>
+  
+      <i class="fas fa-bars" id="menu-icon"></i>
+      
+  
+      <ul class="nav-links" id="navbar">
+  
+        <li><a href="index.html">Home</a></li>
+  
+        <li>
+          <a href="#">Buyers</a>
+          <ul class="dropdown">
+            <li><a href="#">Find a Car</a></li>
+            <li><a href="#">Rental Services</a></li>
+            <li><a href="#">Buy New</a></li>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">Locations</a>
+          <ul class="dropdown">
+            <li><a href="#">Lagos</a></li>
+            <li><a href="#">Abuja</a></li>
+            <li><a href="#">Port Harcourt</a></li>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">Parts</a>
+          <ul class="dropdown">
+            <li><a href="#">Buy Parts</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">Vendors</a>
+          <ul class="dropdown">
+            <li><a href="#">Become a Vendor</a></li>
+            <li><a href="#">Vendor Login</a></li>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">Car Sales</a>
+          <ul class="dropdown">
+            <li><a href="#">New Listings</a></li>
+            <li><a href="#">Certified Used</a></li>
+          </ul>
+        </li>
+  
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="login.html ">Sign Up</a></li>
+        <li><a href="register.html">Sign In</a></li>
+      </ul>
+    </nav>
 
   <section class="hero">
     <div class="hero-slide" style="background-image: url('/nc1.jpeg');">
@@ -456,6 +455,33 @@
     //toggle navbar on small screen
     document.getElementById('menu-icon').addEventListener('click', () => {
  document.getElementById('navbar').classList.toggle('show');
+});
+
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("preloader-hide");
+    document.body.classList.add("loaded");
+  }, 5000);
+});
+
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  const content = document.getElementById('main-content');
+
+  setTimeout(() => {
+    preloader.classList.add('preloader-hide');
+    document.body.classList.remove('preload-active');
+    document.documentElement.classList.remove('preload-active'); // Remove from <html> too
+
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      content.style.display = 'block';
+      document.body.classList.add('loaded');
+    }, 1000);
+  }, 5000);
 });
 
   </script>
