@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoSense Dashboard</title>
+
+  <!-- External CSS & Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Preloader Styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    #preloader img {
+      width: 120px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .preloader-hide {
+      opacity: 0;
+      transform: scale(1.5);
+      pointer-events: none;
+    }
+
+    body.loaded #main-content {
+      opacity: 1;
+      transition: opacity 1s ease 0.5s;
+    }
+
+    body.preload-active {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    #main-content {
+      opacity: 0;
+    }
+
+    html.preload-active {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* Top Navbar Styles */
+    nav {
+      background-color: #333;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      z-index: 1000;
+    }
+
+    nav .logo img {
+      width: 100px;
+    }
+
+    nav i {
+      color: white;
+      font-size: 24px;
+    }
+
+    nav .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav .nav-links li {
+      position: relative;
+    }
+
+    nav .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav .nav-links a:hover {
+      color: #ddd;
+    }
+
+    .profile-img {
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #222;
+      color: white;
+      padding-top: 20px;
+      transition: all 0.3s;
+      z-index: 500;
+    }
+
+    .sidebar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 18px;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    .sidebar .profile img {
+      width: 60px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .sidebar .profile h5 {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Dashboard Content */
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    /* Statistics Cards */
+    .stat-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .sidebar-toggle {
+        display: block;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        z-index: 1001;
+      }
+    }
+
+  </style>
+</head>
+<body class="preload-active">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="Autosense Logo 3.png" alt="AutoSense Logo">
+  </div>
+
+  <!-- Top Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="Autosense Logo 3.png" alt="AutoSense Logo">
+    </div>
+    <i class="fa fa-bars sidebar-toggle" id="sidebarToggle"></i>
+  </nav>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar" style="margin-top: 70px;" id="sidebar">
+    <div class="profile">
+      <img src="user.jpeg" alt="User">
+      <h5>John Doe</h5>
+    </div>
+    <a href="#">Dashboard</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Orders</a>
+    <a href="#">Cars</a>
+    <a href="#">Parts</a>
+    <a href="#">Vendors</a>
+    <a href="#">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content" id="main-content">
+    <h2>Welcome to your Dashboard, John!</h2>
+    <p>Here you can manage your orders, cars, parts, vendors, and more.</p>
+
+    <!-- Statistics Section -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h5>Total Orders</h5>
+          <h3>345</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h5>Sales</h5>
+          <h3>$45,000</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h5>New Listings</h5>
+          <h3>15</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h5>Vendors</h5>
+          <h3>23</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Table -->
+    <h3>Recent Orders</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#1234</td>
+          <td>John Smith</td>
+          <td>2025-04-01</td>
+          <td>Completed</td>
+        </tr>
+        <tr>
+          <td>#1235</td>
+          <td>Jane Doe</td>
+          <td>2025-04-02</td>
+          <td>Pending</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+
+  <!-- Vue.js (Optional for Dynamic Content) -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Preloader handling
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+      }, 1000);
+    });
+
+    // Toggle sidebar
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.toggle('d-none');
+    });
+  </script>
+</body>
+</html>

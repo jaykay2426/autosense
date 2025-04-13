@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoZone Landing Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Preloader Styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    #preloader img {
+      width: 120px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .preloader-hide {
+      opacity: 0;
+      transform: scale(1.5);
+      pointer-events: none;
+    }
+
+    body.loaded #main-content {
+      opacity: 1;
+      transition: opacity 1s ease 0.5s;
+    }
+
+    body.preload-active {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    #main-content {
+      opacity: 0;
+    }
+
+    html.preload-active {
+  overflow: hidden;
+  height: 100vh;
+}
+  </style>
+</head>
+<body class="preload-active">
+
+     <!-- Preloader -->
+  <div id="preloader">
+    <img src="Autosense Logo 3.png" alt="AutoSense Logo">
+  </div>
+
+  <div class="main-content">
+    <nav>
+    <div class="logo">
+      <a href="landing.html"><img src="Autosense Logo 3.png" alt="Autosense Logo"></a>
+    </div>
+
+    <i class="fas fa-bars" id="menu-icon"></i>
+    
+
+    <ul class="nav-links" id="navbar">
+
+      <li class="user-profile">
+        <img src="user.jpeg" alt="User" class="profile-img">
+        <ul class="dropdown profile-dropdown">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </li>
+
+      <li><a href="index.html">Home</a></li>
+
+      <li>
+        <a href="#">Buyers</a>
+        <ul class="dropdown">
+          <li><a href="#">Find a Car</a></li>
+          <li><a href="#">Rental Services</a></li>
+          <li><a href="#">Buy New</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Locations</a>
+        <ul class="dropdown">
+          <li><a href="#">Lagos</a></li>
+          <li><a href="#">Abuja</a></li>
+          <li><a href="#">Port Harcourt</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Parts</a>
+        <ul class="dropdown">
+          <li><a href="#">Buy Parts</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Vendors</a>
+        <ul class="dropdown">
+          <li><a href="#">Become a Vendor</a></li>
+          <li><a href="#">Vendor Login</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Car Sales</a>
+        <ul class="dropdown">
+          <li><a href="#">New Listings</a></li>
+          <li><a href="#">Certified Used</a></li>
+        </ul>
+      </li>
+
+      <li><a href="aboutus.html">About Us</a></li>
+      
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-slide" style="background-image: url('/nc1.jpeg');">
+      <div>
+        <h1>Drive Your Dream</h1>
+        <div class="cta-buttons">
+          <a href="#">Explore Cars</a>
+          <a href="#">Window Shopping</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('/nc2.jpg');">
+      <div>
+        <h1>Find Your Perfect Ride</h1>
+        <div class="cta-buttons">
+          <a href="#">Browse Vehicles</a>
+          <a href="#">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('/nc13\ auction.webp');">
+      <div>
+        <h1>Join Our Sales Today</h1>
+        <div class="cta-buttons">
+          <a href="#">Participate</a>
+          <a href="#">View Available Cars</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('/upgrade.jpg');">
+      <div>
+        <h1>Get An Upgrade On Your Ride</h1>
+        <div class="cta-buttons">
+          <a href="#">Participate</a>
+          <a href="#">Available Upgrades</a>
+        </div>
+      </div>
+    </div>    
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  <section class="featured-deals">
+    <h2>🔥 Featured Deals</h2>
+    <div class="deals-grid">
+      <div class="deal-card">
+        <img src="lexus.jpeg" alt="Car 1">
+        <h3>2021 Lexus RX 350</h3>
+        <p>Starting at <strong>$35,000</strong></p>
+        <a href="#">View Details</a>
+      </div>
+      <div class="deal-card">
+        <img src="toyota.avif" alt="Car 2">
+        <h3>2020 Toyota Camry SE</h3>
+        <p>Starting at <strong>$22,500</strong></p>
+        <a href="#">View Details</a>
+      </div>
+      <div class="deal-card">
+        <img src="bmw.webp" alt="Car 3">
+        <h3>2019 BMW X5</h3>
+        <p>Starting at <strong>$40,800</strong></p>
+        <a href="#">View Details</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  <section class="how-it-works">
+    <h2>How Autosense Works</h2>
+    <div class="steps">
+      <div class="step">
+        <span>1</span>
+        <h3>Browse Auctions</h3>
+        <p>Explore thousands of vehicles from trusted sellers.</p>
+      </div>
+      <div class="step">
+        <span>2</span>
+        <h3>Place a Bid</h3>
+        <p>Enter your bid or buy instantly with our secure system.</p>
+      </div>
+      <div class="step">
+        <span>3</span>
+        <h3>Win & Ship</h3>
+        <p>Complete payment and we’ll handle the shipping to your location.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+
+
+
+
+  <section class="engage-section">
+    <!-- Market Insights -->
+    <div class="engage-box insights">
+      <h2>📊 Live Market Insights</h2>
+      <ul>
+        <li>🚗 Average Car Price: <strong>$28,750</strong></li>
+        <li>🔥 Top Trending: <strong>Toyota Camry 2020+</strong></li>
+        <li>📉 Price Drop Alerts Enabled: <strong>Yes</strong></li>
+        <li>📈 12% growth in online car sales (last 30 days)</li>
+      </ul>
+      <p class="disclaimer">*Data auto-updated every hour</p>
+    </div>
+  
+    <!-- Smart Car Finder -->
+    <div class="engage-box finder">
+      <h2>🧭 Not Sure What to Buy?</h2>
+      <p>Use our AI-powered Car Finder to match your needs with the perfect ride.</p>
+      <button class="finder-btn">Launch Car Finder</button>
+      <div class="car-finder-animation"></div>
+    </div>
+  </section>
+  
+
+
+
+
+
+
+
+
+  <section class="why-choose-us">
+    <div class="container">
+      <h2>Why Choose Us</h2>
+      <p>At AutoSense, we believe in offering more than just cars; we offer an experience that makes car buying and renting a smooth and easy process. Here’s why you should choose us:</p>
+        <div class="features">
+        <div class="feature">
+          <i class="fa fa-car"></i>
+          <h3>Wide Selection</h3>
+          <p>Choose from a wide range of cars to fit your needs and budget.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-cogs"></i>
+          <h3>Fully Equipped</h3>
+          <p>All of our cars are well-maintained and come with the latest features.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-headset"></i>
+          <h3>24/7 Support</h3>
+          <p>Our team is always here to help, with round-the-clock customer support.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-credit-card"></i>
+          <h3>Flexible Financing</h3>
+          <p>We offer financing options to make your purchase easier and more affordable.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-check-circle"></i>
+          <h3>Certified Quality</h3>
+          <p>All of our vehicles are certified, inspected, and ready for the road.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-road"></i>
+          <h3>Free Test Drives</h3>
+          <p>Take any vehicle for a spin to make sure it’s the right choice for you.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-gift"></i>
+          <h3>Exclusive Offers</h3>
+          <p>Enjoy limited-time promotions and special discounts available to our customers.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-shield-alt"></i>
+          <h3>Trustworthy Service</h3>
+          <p>With years of experience and thousands of satisfied customers, we’ve built a reputation for trust and reliability in the automotive industry.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-thumbs-up"></i>
+          <h3>Top-Quality Vehicles</h3>
+          <p>We offer a large inventory of well-maintained and certified cars that are ready to hit the road with you.</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-clock"></i>
+          <h3>Convenience</h3>
+          <p>Our easy-to-use website allows you to browse, compare, and book cars for sale or rent in just a few clicks, saving you time and hassle.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+
+
+
+
+
+    <!-------------------------------------------------------------------- footer -------------------------------------------------------------------->
+    <footer>
+      <div class="footer-container">
+        <!-- How We Work -->
+        <div class="footer-column">
+          <h4>How We Work</h4>
+          <ul>
+            <li><a href="register.html">Get Registered</a></li>
+            <li><a href="#">How We Sell</a></li>
+            <li><a href="#">Seller Fees</a></li>
+            <li><a href="#">Refer a Seller</a></li>
+            <li><a href="#">Bidding FAQ</a></li>
+            <li><a href="#">Payment FAQ</a></li>
+            <li><a href="#">Download Mobile App</a></li>
+          </ul>
+        </div>
+  
+        <!-- About Us -->
+        <div class="footer-column">
+          <h4>About us</h4>
+          <ul>
+            <li><a href="#">Are We Like eBay?</a></li>
+            <li><a href="#">Our Vendors</a></li>
+            <li><a href="#">Become a Partner</a></li>
+            <li><a href="#">Affiliate Resellers Program</a></li>
+            <li><a href="#">What Services we Sell</a></li>
+            <li><a href="#">The Team</a></li>
+          </ul>
+        </div>
+  
+        <!-- Engage Us -->
+        <div class="footer-column">
+          <h4>Engage Us</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Google+</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact Us -->
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="#">Contact Information</a></li>
+          </ul>
+          <div class="client-review">
+            <img src="mascot.jpg" alt="Mascot" />
+            <span><strong>Client Says About Us</strong></span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        © All rights are reserved. 
+        <a href="#">Terms & Conditions</a> / 
+        <a href="#">Privacy Policy</a> / 
+        Powered by <a href="#">Deedoc</a> 
+        <span class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fas fa-camera"></i></a>
+        </span>
+      </div>
+    </footer>
+  </div>
+
+  
+    
+    
+  
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function changeSlide() {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    setInterval(changeSlide, 5000);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        changeSlide();
+      });
+    });
+
+    // Initial active slide
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+
+    //toggle navbar on small screen
+    document.getElementById('menu-icon').addEventListener('click', () => {
+ document.getElementById('navbar').classList.toggle('show');
+});
+
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("preloader-hide");
+    document.body.classList.add("loaded");
+  }, 5000);
+});
+
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  const content = document.getElementById('main-content');
+
+  setTimeout(() => {
+    preloader.classList.add('preloader-hide');
+    document.body.classList.remove('preload-active');
+    document.documentElement.classList.remove('preload-active'); // Remove from <html> too
+
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      content.style.display = 'block';
+      document.body.classList.add('loaded');
+    }, 1000);
+  }, 5000);
+});
+
+  </script>
+
+
+<script src="script.js"></script>
+</body>
+</html>

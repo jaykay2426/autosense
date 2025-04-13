@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - AutoSense</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.7/scrollreveal.min.js"></script>
+  <style>
+    /* Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Hero Section */
+hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Hide the overflow for large images */
+}
+
+.hero-img {
+  position: absolute; /* Position the image behind the content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the section */
+  z-index: -1; /* Ensures the image is behind the content */
+}
+
+.hero-content {
+  position: relative; /* Makes sure the content stays on top of the image */
+  z-index: 1; /* Makes the text appear above the image */
+}
+
+.cta-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+.cta-button:hover {
+  background-color: #002d59;
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 20px;
+  background-color: #fff;
+  transition: background 0.3s ease;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #00274d;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Services Section */
+.services {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.service-box {
+  width: 30%;
+  background-color: #e0e0e0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-box i {
+  font-size: 50px;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.service-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.feature {
+  background-color: #fff;
+  padding: 30px;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature i {
+  font-size: 40px;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 100px 20px;
+  background: linear-gradient(145deg, #fdfbfb, #ebedee);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+#testimonials .section-title {
+  font-size: 42px;
+  color: #1f3b57;
+  margin-bottom: 60px;
+  text-align: center;
+  position: relative;
+}
+
+#testimonials .section-title::after {
+  content: "❤";
+  font-size: 24px;
+  color: #ff4d4d;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.testimonial-box {
+  background: white;
+  border-radius: 30px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  width: 420px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatUp 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+.testimonial-box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.testimonial-box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.testimonial-box:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-box p {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.testimonial-box p::before {
+  content: "“";
+  font-size: 40px;
+  color: #ff4d4d;
+  position: absolute;
+  left: -20px;
+  top: -10px;
+}
+
+.testimonial-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ff4d4d;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.testimonial-box h3 {
+  font-size: 20px;
+  color: #004080;
+  margin-bottom: 5px;
+}
+
+.testimonial-box p:last-child {
+  font-style: normal;
+  font-weight: bold;
+  color: #888;
+  font-size: 16px;
+}
+
+/* Animation */
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .services, .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box, .feature {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-box {
+    width: 90%;
+  }
+  #our-story img{
+     width: 50vw;
+    
+  }
+}
+
+
+#our-story img{
+    width: 40%;
+}
+  </style>
+
+<script src="script.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+          <a href="index.html"><img src="Autosense Logo 3.png" alt="Autosense Logo"></a>
+        </div>
+    
+        <i class="fas fa-bars" id="menu-icon"></i>
+        
+    
+        <ul class="nav-links" id="navbar">
+    
+          <li><a href="index.html">Home</a></li>
+    
+          <li>
+            <a href="#">Buyers</a>
+            <ul class="dropdown">
+              <li><a href="#">Find a Car</a></li>
+              <li><a href="#">Rental Services</a></li>
+              <li><a href="#">Buy New</a></li>
+            </ul>
+          </li>
+    
+          <li>
+            <a href="#">Locations</a>
+            <ul class="dropdown">
+              <li><a href="#">Lagos</a></li>
+              <li><a href="#">Abuja</a></li>
+              <li><a href="#">Port Harcourt</a></li>
+            </ul>
+          </li>
+    
+          <li>
+            <a href="#">Parts</a>
+            <ul class="dropdown">
+              <li><a href="#">Buy Parts</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+          </li>
+    
+          <li>
+            <a href="#">Vendors</a>
+            <ul class="dropdown">
+              <li><a href="#">Become a Vendor</a></li>
+              <li><a href="#">Vendor Login</a></li>
+            </ul>
+          </li>
+    
+          <li>
+            <a href="#">Car Sales</a>
+            <ul class="dropdown">
+              <li><a href="#">New Listings</a></li>
+              <li><a href="#">Certified Used</a></li>
+            </ul>
+          </li>
+    
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="login.html ">Sign Up</a></li>
+          <li><a href="register.html">Sign In</a></li>
+        </ul>
+      </nav>
+
+  <!-- Hero Section -->
+  
+  
+
+  <!-- Our Story Section -->
+  <section id="our-story" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Story</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero iste quod maiores neque quibusdam possimus dolorem repellat sapiente, quisquam sit voluptas et! Maxime dolores consequatur reiciendis quibusdam culpa, nesciunt similique? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quo fuga, a placeat cupiditate nihil? Ut ratione omnis dignissimos minus mollitia vero saepe minima atque. Minima ratione similique id eum.</p>
+      <div class="image-container">
+        <img src="Autosense Logo 2.png" alt="Car Dealership" class="responsive-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services Section -->
+  <section id="our-services" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p>We offer a variety of services to cater to all your automotive needs. From buying a car to renting one for a weekend getaway, AutoSense has it all!</p>
+      
+      <div class="services">
+        <!-- Car Sales -->
+        <div class="service-box">
+          <i class="fa fa-car"></i>
+          <h3>Car Sales</h3>
+          <p>Browse our wide selection of cars for sale, including new and pre-owned vehicles. We ensure that all our cars are thoroughly inspected and come with a warranty.</p>
+        </div>
+        
+        <!-- Car Rentals -->
+        <div class="service-box">
+          <i class="fa fa-car-side"></i>
+          <h3>Car Rentals</h3>
+          <p>Need a car for a day, a week, or longer? Our car rental service provides flexibility with a range of vehicles for short-term rentals at affordable rates.</p>
+        </div>
+        
+        <!-- Financing -->
+        <div class="service-box">
+          <i class="fa fa-credit-card"></i>
+          <h3>Flexible Financing</h3>
+          <p>We offer flexible financing options to help you get behind the wheel of your dream car. Talk to us about monthly payment plans tailored to your budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us" class="section">
+    <div class="container">
+      <h2 class="section-title">Why Choose AutoSense?</h2>
+      <p>At AutoSense, we believe in offering more than just cars; we offer an experience that makes car buying and renting a smooth and easy process. Here’s why you should choose us:</p>
+      
+      <div class="features">
+        <div class="feature">
+            <i class="fa fa-car"></i>
+            <h3>Wide Selection</h3>
+            <p>Choose from a wide range of cars to fit your needs and budget.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-cogs"></i>
+            <h3>Fully Equipped</h3>
+            <p>All of our cars are well-maintained and come with the latest features.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>Our team is always here to help, with round-the-clock customer support.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-credit-card"></i>
+            <h3>Flexible Financing</h3>
+            <p>We offer financing options to make your purchase easier and more affordable.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-check-circle"></i>
+            <h3>Certified Quality</h3>
+            <p>All of our vehicles are certified, inspected, and ready for the road.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-road"></i>
+            <h3>Free Test Drives</h3>
+            <p>Take any vehicle for a spin to make sure it’s the right choice for you.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-gift"></i>
+            <h3>Exclusive Offers</h3>
+            <p>Enjoy limited-time promotions and special discounts available to our customers.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-shield-alt"></i>
+            <h3>Trustworthy Service</h3>
+            <p>With years of experience and thousands of satisfied customers, we’ve built a reputation for trust and reliability in the automotive industry.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-thumbs-up"></i>
+            <h3>Top-Quality Vehicles</h3>
+            <p>We offer a large inventory of well-maintained and certified cars that are ready to hit the road with you.</p>
+          </div>
+          <div class="feature">
+            <i class="fa fa-clock"></i>
+            <h3>Convenience</h3>
+            <p>Our easy-to-use website allows you to browse, compare, and book cars for sale or rent in just a few clicks, saving you time and hassle.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials">
+        
+        <div class="testimonial-box">
+          <picture>
+            <img src="user.jpeg" alt="Jane Doe" class="testimonial-photo">
+          </picture>
+          <p>"I had an amazing experience with AutoSense! I rented a car for a weekend getaway, and the process was seamless. The car was in great condition, and I will definitely rent from them again!"</p>
+          <h3>Jane Doe</h3>
+          <p>Weekend Renter</p>
+        </div>
+  
+        <div class="testimonial-box">
+          <picture>
+            <img src="user.jpeg" alt="John Smith" class="testimonial-photo">
+          </picture>
+          <p>"Buying a car from AutoSense was the best decision I made! Their team helped me find the perfect car and walked me through every step of the process. Highly recommend!"</p>
+          <h3>John Smith</h3>
+          <p>Car Buyer</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+
+  
+    <!-------------------------------------------------------------------- footer -------------------------------------------------------------------->
+    <footer>
+        <div class="footer-container">
+          <!-- How We Work -->
+          <div class="footer-column">
+            <h4>How We Work</h4>
+            <ul>
+              <li><a href="register.html">Get Registered</a></li>
+              <li><a href="#">How We Sell</a></li>
+              <li><a href="#">Seller Fees</a></li>
+              <li><a href="#">Refer a Seller</a></li>
+              <li><a href="#">Bidding FAQ</a></li>
+              <li><a href="#">Payment FAQ</a></li>
+              <li><a href="#">Download Mobile App</a></li>
+            </ul>
+          </div>
+    
+          <!-- About Us -->
+          <div class="footer-column">
+            <h4>About us</h4>
+            <ul>
+              <li><a href="#">Are We Like eBay?</a></li>
+              <li><a href="#">Our Vendors</a></li>
+              <li><a href="#">Become a Partner</a></li>
+              <li><a href="#">Affiliate Resellers Program</a></li>
+              <li><a href="#">What Services we Sell</a></li>
+              <li><a href="#">The Team</a></li>
+            </ul>
+          </div>
+    
+          <!-- Engage Us -->
+          <div class="footer-column">
+            <h4>Engage Us</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Youtube</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Google+</a></li>
+            </ul>
+          </div>
+    
+          <!-- Contact Us -->
+          <div class="footer-column">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="#">Contact Information</a></li>
+            </ul>
+            <div class="client-review">
+              <img src="mascot.jpg" alt="Mascot" />
+              <span><strong>Client Says About Us</strong></span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          © All rights are reserved. 
+          <a href="#">Terms & Conditions</a> / 
+          <a href="#">Privacy Policy</a> / 
+          Powered by <a href="#">Deedoc</a> 
+          <span class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fas fa-camera"></i></a>
+          </span>
+        </div>
+      </footer>
+      
+      
+    
+
+  <script src="script.js"></script>
+</body>
+</html>
