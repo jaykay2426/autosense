@@ -168,7 +168,8 @@
   
   
   
-  .autosense-signin-background {
+ /* Background Container */
+.autosense-signin-background {
     width: 100vw;
     height: 100vh;
     background: url('Autosense Logo.png') no-repeat center center;
@@ -179,8 +180,10 @@
     position: relative;
     background-color: #001f3f;
     animation: pulseLogo 8s ease-in-out infinite;
+    overflow: hidden;
   }
   
+  /* Pulse animation for background */
   @keyframes pulseLogo {
     0%, 100% {
       background-size: 98%;
@@ -192,26 +195,41 @@
     }
   }
   
+  /* Overlay container (Login Box) */
   .autosense-signin-overlay {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
-    padding: 40px 30px;
     width: 90%;
     max-width: 400px;
+    max-height: 90vh;
+    padding: 40px 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: fadeSlideIn 1.2s ease forwards;
     opacity: 0;
     transform: translateY(20px);
+    overflow-y: auto;
   }
   
+  /* Smooth slide-in animation */
   @keyframes fadeSlideIn {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
+  
+  /* Optional scrollbar style */
+  .autosense-signin-overlay::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .autosense-signin-overlay::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+  }
+  
   
   .autosense-signin-form {
     display: flex;
