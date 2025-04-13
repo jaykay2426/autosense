@@ -5,23 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AUTOSENSE Sign Up</title>
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    @media (max-width: 600px) {
+  .autosense-signin-background {
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+  }
+
+  .autosense-signin-overlay {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .autosense-signin-form h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .autosense-signin-form input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .signin-btn,
+  .login-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .forgot-password {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+  </style>
 </head>
 <body>
 
-  <div class="autosense-login-background">
-    <div class="autosense-login-overlay">
+  <div class="autosense-signin-background">
+    <div class="autosense-signin-overlay">
       <form class="autosense-signin-form">
         <h2>Create Your Account</h2>
         <input type="text" placeholder="First Name" required>
-                <input type="text" placeholder="Middle Name" required>
-                <input type="text" placeholder="Last Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="number" placeholder="Phone Number" id="">
-                <input type="text" placeholder="Address" id="">
-                <input type="password" placeholder="Password" required>
-                <input type="password" placeholder="Confirm Password" id="">
-        <button class="login-btn" type="submit">Sign Up</button>
-        <button class="signup-btn" type="button" onclick="location.href='login.html'">Back to Login</button>
+        <input type="text" placeholder="Middle Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="number" placeholder="Phone Number" id="">
+        <input type="text" placeholder="Address" id="">
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" id="">
+        <button class="signin-btn" type="submit">Sign Up</button>
+        <button class="login-btn" type="button" onclick="location.href='login.html'">Back to Login</button>
         <p class="forgot-password">
           By signing up, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a>.
         </p>
