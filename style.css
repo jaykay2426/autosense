@@ -706,6 +706,67 @@
   
   
   
+
+  .autosense-contact-chat {
+    background: linear-gradient(135deg, #061d2c, #0e2e3f);
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+  }
+  
+  .chat-intro {
+    max-width: 750px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .chat-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 15px 0;
+  }
+  
+  .chat-intro strong {
+    color: #00c3ff;
+  }
+  
+  .chat-contact-btn {
+    margin-top: 25px;
+    display: inline-block;
+    background-color: #00c3ff;
+    color: #061d2c;
+    padding: 14px 34px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 35px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .chat-contact-btn:hover {
+    background-color: #00a9dd;
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   
   
   
