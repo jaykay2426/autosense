@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,6 +142,60 @@
   transform: scale(1.05);
 }
 
+/* Add this inside <style> */
+  @keyframes slideLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.contact-form input:nth-child(1) {
+  animation: slideLeft 1s ease forwards;
+}
+
+.contact-form input:nth-child(2) {
+  animation: slideRight 1s ease forwards;
+}
+
+.contact-form input:nth-child(3) {
+  animation: slideUp 1s ease forwards;
+}
+
+.contact-form textarea {
+  animation: slideDown 1s ease forwards;
+}
+
+.contact-btn {
+  animation: slideUp 1s ease 0.5s forwards;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-btn {
+  opacity: 0;
+}
+
+body.loaded .contact-form input,
+body.loaded .contact-form textarea,
+body.loaded .contact-btn {
+  opacity: 1;
+}
+
+
 @media (max-width: 768px) {
   .contact-section {
     padding: 40px 15px;
@@ -177,118 +233,95 @@
   </style>
 </head>
 <body class="preload-active">
-
-     <!-- Preloader -->
-  
-
-  <div class="main-content">
-    <nav>
-    <div class="logo">
-      <a href="landing.html"><img src="Autosense Logo 3.png" alt="Autosense Logo"></a>
-    </div>
-
-    <i class="fas fa-bars" id="menu-icon"></i>
-    
-
-    <ul class="nav-links" id="navbar">
-
-      <li class="user-profile">
-        <img src="user.jpeg" alt="User" class="profile-img">
-        <ul class="dropdown profile-dropdown">
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
-      </li>
-
-      <li><a href="index.html">Home</a></li>
-
-      <li>
-        <a href="#">Buyers</a>
-        <ul class="dropdown">
-          <li><a href="#">Find a Car</a></li>
-          <li><a href="#">Rental Services</a></li>
-          <li><a href="#">Buy New</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Locations</a>
-        <ul class="dropdown">
-          <li><a href="#">Lagos</a></li>
-          <li><a href="#">Abuja</a></li>
-          <li><a href="#">Port Harcourt</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Parts</a>
-        <ul class="dropdown">
-          <li><a href="#">Buy Parts</a></li>
-          <li><a href="#">Accessories</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Vendors</a>
-        <ul class="dropdown">
-          <li><a href="#">Become a Vendor</a></li>
-          <li><a href="#">Vendor Login</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Car Sales</a>
-        <ul class="dropdown">
-          <li><a href="#">New Listings</a></li>
-          <li><a href="#">Certified Used</a></li>
-        </ul>
-      </li>
-
-      <li><a href="aboutus.html">About Us</a></li>
-      
-    </ul>
-  </nav>
-
-  <!-- ================== Contact Us Section ================== -->
-<section class="contact-section" id="contact">
-  <div class="contact-container">
-    <h2>Contact Us</h2>
-    <p>Have questions or need assistance? Fill out the form and we'll get back to you!</p>
-
-    <form class="contact-form">
-      <div class="form-group">
-        <input type="text" placeholder="Full Name" required />
-        <input type="text" placeholder="Title (e.g. Mr, Mrs, Dr)" required />
-      </div>
-
-      <div class="form-group">
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="Phone Number" required />
-      </div>
-
-      <div class="form-group">
-        <input type="text" placeholder="Your Address" required />
-      </div>
-
-      <textarea placeholder="Your Message" rows="6" required></textarea>
-
-      <button type="submit" class="contact-btn">Send Message</button>
-    </form>
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="Autosense Logo 3.png" alt="Loading...">
   </div>
-</section>
 
+  <div class="main-content" id="main-content" style="display: none;">
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <a href="landing.html"><img src="Autosense Logo 3.png" alt="Autosense Logo"></a>
+      </div>
+      <i class="fas fa-bars" id="menu-icon"></i>
+      <ul class="nav-links" id="navbar">
+        <li class="user-profile">
+          <img src="user.jpeg" alt="User" class="profile-img">
+          <ul class="dropdown profile-dropdown">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Buyers</a>
+          <ul class="dropdown">
+            <li><a href="#">Find a Car</a></li>
+            <li><a href="#">Rental Services</a></li>
+            <li><a href="#">Buy New</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Locations</a>
+          <ul class="dropdown">
+            <li><a href="#">Lagos</a></li>
+            <li><a href="#">Abuja</a></li>
+            <li><a href="#">Port Harcourt</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Parts</a>
+          <ul class="dropdown">
+            <li><a href="#">Buy Parts</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Vendors</a>
+          <ul class="dropdown">
+            <li><a href="#">Become a Vendor</a></li>
+            <li><a href="#">Vendor Login</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Car Sales</a>
+          <ul class="dropdown">
+            <li><a href="#">New Listings</a></li>
+            <li><a href="#">Certified Used</a></li>
+          </ul>
+        </li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
 
+    <!-- Contact Us Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <h2>Contact Us</h2>
+        <p>Have questions or need assistance? Fill out the form and we'll get back to you!</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" required />
+            <input type="text" placeholder="Title (e.g. Mr, Mrs, Dr)" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email Address" required />
+            <input type="tel" placeholder="Phone Number" required />
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Your Address" required />
+          </div>
+          <textarea placeholder="Your Message" rows="6" required></textarea>
+          <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
 
-
-
-
-
-
-    <!-------------------------------------------------------------------- footer -------------------------------------------------------------------->
+    <!-- Footer -->
     <footer>
       <div class="footer-container">
-        <!-- How We Work -->
         <div class="footer-column">
           <h4>How We Work</h4>
           <ul>
@@ -301,8 +334,6 @@
             <li><a href="#">Download Mobile App</a></li>
           </ul>
         </div>
-  
-        <!-- About Us -->
         <div class="footer-column">
           <h4>About us</h4>
           <ul>
@@ -314,8 +345,6 @@
             <li><a href="#">The Team</a></li>
           </ul>
         </div>
-  
-        <!-- Engage Us -->
         <div class="footer-column">
           <h4>Engage Us</h4>
           <ul>
@@ -328,8 +357,6 @@
             <li><a href="#">Google+</a></li>
           </ul>
         </div>
-  
-        <!-- Contact Us -->
         <div class="footer-column">
           <h4>Contact Us</h4>
           <ul>
@@ -341,13 +368,11 @@
           </div>
         </div>
       </div>
-  
-      <!-- Bottom Bar -->
       <div class="footer-bottom">
-        © All rights are reserved. 
-        <a href="#">Terms & Conditions</a> / 
-        <a href="#">Privacy Policy</a> / 
-        Powered by <a href="#">Deedoc</a> 
+        © All rights are reserved.
+        <a href="#">Terms & Conditions</a> /
+        <a href="#">Privacy Policy</a> /
+        Powered by <a href="#">Deedoc</a>
         <span class="social-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
@@ -359,74 +384,27 @@
     </footer>
   </div>
 
-  
-    
-    
-  
-
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.dot');
-
-    function changeSlide() {
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-
-      currentSlide = (currentSlide + 1) % slides.length;
-
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-    }
-
-    setInterval(changeSlide, 5000);
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentSlide = index;
-        changeSlide();
-      });
+    document.getElementById('menu-icon').addEventListener('click', () => {
+      document.getElementById('navbar').classList.toggle('show');
     });
 
-    // Initial active slide
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      const content = document.getElementById("main-content");
 
-    //toggle navbar on small screen
-    document.getElementById('menu-icon').addEventListener('click', () => {
- document.getElementById('navbar').classList.toggle('show');
-});
+      setTimeout(() => {
+        preloader.classList.add("preloader-hide");
+        document.body.classList.remove("preload-active");
+        document.documentElement.classList.remove("preload-active");
 
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const preloader = document.getElementById("preloader");
-    preloader.classList.add("preloader-hide");
-    document.body.classList.add("loaded");
-  }, 5000);
-});
-
-
-window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  const content = document.getElementById('main-content');
-
-  setTimeout(() => {
-    preloader.classList.add('preloader-hide');
-    document.body.classList.remove('preload-active');
-    document.documentElement.classList.remove('preload-active'); // Remove from <html> too
-
-    setTimeout(() => {
-      preloader.style.display = 'none';
-      content.style.display = 'block';
-      document.body.classList.add('loaded');
-    }, 1000);
-  }, 5000);
-});
-
+        setTimeout(() => {
+          preloader.style.display = "none";
+          content.style.display = "block";
+          document.body.classList.add("loaded");
+        }, 1000);
+      }, 5000);
+    });
   </script>
-
-
-<script src="script.js"></script>
 </body>
 </html>
