@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Rental - AutoSense</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Hero Section */
+  .rental-hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+}
+.rental-hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.hero-btn {
+  padding: 10px 25px;
+  background: #003366;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.hero-btn:hover {
+  background: #022344;
+}
+
+/* Filter Section */
+.filter-section {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.filter-input, .filter-select, .filter-btn {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.filter-btn {
+  background: #003366;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.filter-btn:hover {
+  background: #003366;
+}
+
+/* Rental Cars Section */
+.rental-cars-new {
+  padding: 60px 20px;
+  background: #f7f9fc;
+  text-align: center;
+}
+.rental-cars-new h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003366;
+}
+.car-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.car-card-new {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+.car-card-new:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.car-card-new img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.car-card-body {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.car-card-body h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.car-card-body p {
+  font-size: 1.2rem;
+  color: #219150;
+  margin-bottom: 15px;
+}
+.car-specs-new {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.car-specs-new li {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+.rent-btn-new {
+  background: #003366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+.rent-btn-new:hover {
+  background: #021f49;
+}
+
+
+/* Rental Steps Section */
+.rental-steps {
+  background: #003366;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+.step h3 {
+  font-size: 1.5rem;
+}
+.step p {
+  font-size: 1rem;
+}
+
+/* Special Offer */
+.special-offer {
+  background: #ffcc00;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.rental-contact {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+.rental-contact form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.rental-contact input, 
+.rental-contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+.contact-btn {
+  padding: 10px;
+  background: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact-btn:hover {
+  background: #011e3a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+ /* Testimonials */
+ .testimonials {
+      background: #f7f9fc;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .testimonial {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .testimonial:hover {
+      transform: translateY(-10px);
+    }
+    .testimonial p {
+      font-style: italic;
+      color: #555;
+    }
+    .testimonial h4 {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #003366;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose {
+      background: #003366;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .choose-item {
+      background: #022344;
+      padding: 20px;
+      border-radius: 15px;
+      transition: background 0.3s;
+    }
+    .choose-item:hover {
+      background: #01172d;
+    }
+    .choose-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .choose-item p {
+      font-size: 1rem;
+      color: #bbb;
+    }
+
+    /* FAQ Section */
+    .faq {
+      background: #fff;
+      padding: 60px 20px;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #003366;
+    }
+    .faq-item {
+      max-width: 800px;
+      margin: 10px auto;
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-item p {
+      display: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #666;
+    }
+    .faq-item.active p {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <a href="landing.html"><img src="Autosense Logo 3.png" alt="Autosense Logo"></a>
+    </div>
+
+    <i class="fas fa-bars" id="menu-icon"></i>
+    
+
+    <ul class="nav-links" id="navbar">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li>
+        <a href="#">Buyers</a>
+        <ul class="dropdown">
+          <li><a href="buyer.html">Find a Car</a></li>
+          <li><a href="#">Rental Services</a></li>
+          <li><a href="#">Buy New</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Locations</a>
+        <ul class="dropdown">
+          <li><a href="#">Lagos</a></li>
+          <li><a href="#">Abuja</a></li>
+          <li><a href="#">Port Harcourt</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Parts</a>
+        <ul class="dropdown">
+          <li><a href="#">Buy Parts</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Vendors</a>
+        <ul class="dropdown">
+          <li><a href="#">Become a Vendor</a></li>
+          <li><a href="#">Vendor Login</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Car Sales</a>
+        <ul class="dropdown">
+          <li><a href="#">New Listings</a></li>
+          <li><a href="#">Certified Used</a></li>
+        </ul>
+      </li>
+
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="login.html ">Sign Up</a></li>
+      <li><a href="register.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="rental-hero" id="rental-hero">
+    <div class="hero-content">
+      <h1>Rent Your Dream Car Today</h1>
+      <p>Drive your passion. Easy, fast, and affordable rentals with AutoSense.</p>
+      <a href="#cars" class="hero-btn">Browse Cars</a>
+    </div>
+  </section>
+
+  <!-- Filter/Search Section -->
+  <section class="filter-section">
+    <div class="filter-container">
+      <input type="text" placeholder="Search for a car..." class="filter-input">
+      <select class="filter-select">
+        <option value="">All Types</option>
+        <option value="SUV">SUV</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Sports">Sports</option>
+        <option value="Truck">Truck</option>
+      </select>
+      <button class="filter-btn">Filter</button>
+    </div>
+  </section>
+
+  <!-- Car Listings -->
+  <section class="rental-cars-new" id="cars">
+    <h2>Available Cars for Rent</h2>
+    <div class="car-grid-new">
+      <div class="car-card-new">
+        <img src="402904-2022-tesla-model-3.jpg" alt="Tesla Model 3">
+        <div class="car-card-body">
+          <h3>2022 Tesla Model 3</h3>
+          <p>$120/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Electric</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2021 BMW X5.webp" alt="BMW X5">
+        <div class="car-card-body">
+          <h3>2021 BMW X5</h3>
+          <p>$140/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2020 Audi A4.avif" alt="Audi A4">
+        <div class="car-card-body">
+          <h3>2020 Audi A4</h3>
+          <p>$110/day</p>
+          <ul class="car-specs-new">
+            <li>Manual</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+      <div class="car-card-new">
+        <img src="402904-2022-tesla-model-3.jpg" alt="Tesla Model 3">
+        <div class="car-card-body">
+          <h3>2022 Tesla Model 3</h3>
+          <p>$120/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Electric</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2021 BMW X5.webp" alt="BMW X5">
+        <div class="car-card-body">
+          <h3>2021 BMW X5</h3>
+          <p>$140/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2020 Audi A4.avif" alt="Audi A4">
+        <div class="car-card-body">
+          <h3>2020 Audi A4</h3>
+          <p>$110/day</p>
+          <ul class="car-specs-new">
+            <li>Manual</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+      <div class="car-card-new">
+        <img src="402904-2022-tesla-model-3.jpg" alt="Tesla Model 3">
+        <div class="car-card-body">
+          <h3>2022 Tesla Model 3</h3>
+          <p>$120/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Electric</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2021 BMW X5.webp" alt="BMW X5">
+        <div class="car-card-body">
+          <h3>2021 BMW X5</h3>
+          <p>$140/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2020 Audi A4.avif" alt="Audi A4">
+        <div class="car-card-body">
+          <h3>2020 Audi A4</h3>
+          <p>$110/day</p>
+          <ul class="car-specs-new">
+            <li>Manual</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+      <div class="car-card-new">
+        <img src="402904-2022-tesla-model-3.jpg" alt="Tesla Model 3">
+        <div class="car-card-body">
+          <h3>2022 Tesla Model 3</h3>
+          <p>$120/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Electric</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2021 BMW X5.webp" alt="BMW X5">
+        <div class="car-card-body">
+          <h3>2021 BMW X5</h3>
+          <p>$140/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2020 Audi A4.avif" alt="Audi A4">
+        <div class="car-card-body">
+          <h3>2020 Audi A4</h3>
+          <p>$110/day</p>
+          <ul class="car-specs-new">
+            <li>Manual</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+      <div class="car-card-new">
+        <img src="402904-2022-tesla-model-3.jpg" alt="Tesla Model 3">
+        <div class="car-card-body">
+          <h3>2022 Tesla Model 3</h3>
+          <p>$120/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Electric</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2021 BMW X5.webp" alt="BMW X5">
+        <div class="car-card-body">
+          <h3>2021 BMW X5</h3>
+          <p>$140/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2020 Audi A4.avif" alt="Audi A4">
+        <div class="car-card-body">
+          <h3>2020 Audi A4</h3>
+          <p>$110/day</p>
+          <ul class="car-specs-new">
+            <li>Manual</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+      <div class="car-card-new">
+        <img src="402904-2022-tesla-model-3.jpg" alt="Tesla Model 3">
+        <div class="car-card-body">
+          <h3>2022 Tesla Model 3</h3>
+          <p>$120/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Electric</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2021 BMW X5.webp" alt="BMW X5">
+        <div class="car-card-body">
+          <h3>2021 BMW X5</h3>
+          <p>$140/day</p>
+          <ul class="car-specs-new">
+            <li>Automatic</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card-new">
+        <img src="2020 Audi A4.avif" alt="Audi A4">
+        <div class="car-card-body">
+          <h3>2020 Audi A4</h3>
+          <p>$110/day</p>
+          <ul class="car-specs-new">
+            <li>Manual</li>
+            <li>Petrol</li>
+            <li>5 Seats</li>
+          </ul>
+          <a href="rentnow.html" class="rent-btn-new">Rent Now</a>
+        </div>
+      </div>
+  
+      <!-- Add more car cards -->
+    </div>
+  </section>
+
+  <!-- Rental Steps -->
+  <section class="rental-steps">
+    <h2>How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <h3>1. Choose Your Car</h3>
+        <p>Browse through a wide range of vehicles to find the perfect one for your journey.</p>
+      </div>
+      <div class="step">
+        <h3>2. Book Instantly</h3>
+        <p>Select your preferred car, pick-up location, and dates in just a few clicks.</p>
+      </div>
+      <div class="step">
+        <h3>3. Pick Up & Drive</h3>
+        <p>Pick up your car from the designated location and hit the road hassle-free.</p>
+      </div>
+      <div class="step">
+        <h3>4. Return Easily</h3>
+        <p>Return the car at your scheduled time. Simple and convenient rental returns!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offer Banner -->
+<!-- Featured Deals -->
+<section class="special-offer">
+  <h2>🔥 Featured Rental Deals 🔥</h2>
+  <p>Save more when you rent today! Limited-time offers on premium vehicles.</p>
+</section>
+
+  <!-- Contact Section -->
+  <section class="rental-contact">
+    <h2>Need Help?</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="contact-btn">Send Message</button>
+    </form>
+  </section>
+
+
+  <section class="why-choose" data-aos="fade-up">
+    <h2>Why Choose AutoSense Rentals?</h2>
+    <div class="choose-grid">
+      <div class="choose-item">
+        <h3>Wide Fleet</h3>
+        <p>From luxury to economy, we have a vehicle for every need.</p>
+      </div>
+      <div class="choose-item">
+        <h3>Affordable Rates</h3>
+        <p>Best prices with no hidden fees, guaranteed.</p>
+      </div>
+      <div class="choose-item">
+        <h3>24/7 Support</h3>
+        <p>Wherever you are, we are just a call away.</p>
+      </div>
+      <div class="choose-item">
+        <h3>Easy Booking</h3>
+        <p>Simple online booking process for your convenience.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="testimonials" data-aos="fade-up">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>"Excellent service! Booking was quick and the car was in perfect condition."</p>
+        <h4>— Maria T.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"AutoSense made my trip so much easier. Highly recommend their rental services!"</p>
+        <h4>— James L.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Loved the wide range of vehicles. Picked a sports car for a weekend getaway!"</p>
+        <h4>— Anita S.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Banner -->
+<section class="special-offer" style="background: #003366; color: #fff; margin-top: 30px;">
+  <h2>Ready to Hit the Road?</h2>
+  <p>Find the perfect car today. Quick booking, great deals, unforgettable rides!</p>
+  <a href="#cars" class="hero-btn" style="margin-top: 20px; display: inline-block;">Rent a Car Now</a>
+</section>
+  
+  <!-- FAQ Section -->
+  <section class="faq" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What documents do I need? <span>+</span></h3>
+      <p>You’ll need a valid driver's license, ID, and a credit card.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is insurance included? <span>+</span></h3>
+      <p>Yes! All rentals come with basic insurance coverage included in the price.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I extend my rental? <span>+</span></h3>
+      <p>Of course! Contact our support team at least 24 hours before your rental ends.</p>
+    </div>
+  </section>
+
+
+  <!-------------------------------------------------------------------- footer -------------------------------------------------------------------->
+  <footer>
+    <div class="footer-container">
+      <!-- How We Work -->
+      <div class="footer-column">
+        <h4>How We Work</h4>
+        <ul>
+          <li><a href="register.html">Get Registered</a></li>
+          <li><a href="#">How We Sell</a></li>
+          <li><a href="#">Seller Fees</a></li>
+          <li><a href="#">Refer a Seller</a></li>
+          <li><a href="#">Bidding FAQ</a></li>
+          <li><a href="#">Payment FAQ</a></li>
+          <li><a href="#">Download Mobile App</a></li>
+        </ul>
+      </div>
+
+      <!-- About Us -->
+      <div class="footer-column">
+        <h4>About us</h4>
+        <ul>
+          <li><a href="#">Are We Like eBay?</a></li>
+          <li><a href="#">Our Vendors</a></li>
+          <li><a href="#">Become a Partner</a></li>
+          <li><a href="#">Affiliate Resellers Program</a></li>
+          <li><a href="#">What Services we Sell</a></li>
+          <li><a href="#">The Team</a></li>
+        </ul>
+      </div>
+
+      <!-- Engage Us -->
+      <div class="footer-column">
+        <h4>Engage Us</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Youtube</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Google+</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="#">Contact Information</a></li>
+        </ul>
+        <div class="client-review">
+          <img src="mascot.jpg" alt="Mascot" />
+          <span><strong>Client Says About Us</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      © All rights are reserved. 
+      <a href="#">Terms & Conditions</a> / 
+      <a href="#">Privacy Policy</a> / 
+      Powered by <a href="#">Deedoc</a> 
+      <span class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fas fa-camera"></i></a>
+      </span>
+    </div>
+  </footer>
+
+
+
+
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+
+    // FAQ Toggle
+  const faqItems = document.querySelectorAll('.faq-item h3');
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      item.parentElement.classList.toggle('active');
+    });
+  });
+
+
+
+    const hero = document.getElementById('rental-hero');
+    const images = [
+      'rent1.webp',
+      'rent2.webp',
+      'rent.webp',
+      'rent3.webp',
+      'rent5.jpg',
+      'rent6.jpeg'
+    ];
+    let current = 0;
+  
+    function changeBackground() {
+      hero.style.background = `url(${images[current]}) center/cover no-repeat`;
+      current = (current + 1) % images.length;
+    }
+  
+    setInterval(changeBackground, 4000); // Change every 4 seconds
+    changeBackground(); // Initialize immediately
+  </script>
+
+</body>
+</html>
